@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.inter-normal {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
+.react-multiple-carousel__arrow{
+  z-index: 10 !important;
+}
+
+.custom-dot-list-style li button {
+  background-color: white !important; 
+  border-radius: 9999px;
+  border: white solid 2px;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.custom-dot-list-style li.react-multi-carousel-dot--active button {
+  background-color: #00878C !important; /* Also teal for the active dot */
+  border: #00878C solid 2px;
+  transform: scale(1.2);
+}
+
+.element.style {
+  flex: 1 1 auto;
+  position: relative;
+  width: 536px;
+}
+
