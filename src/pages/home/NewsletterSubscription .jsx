@@ -14,12 +14,12 @@ const NewsletterSubscription = () => {
           Newsletter.
         </p>
 
-        <div className="w-full max-w-sm mx-auto mt-6 bg-transparent border rounded-full bg-white focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 focus-within:ring-opacity-40">
+        <div className="w-[340px] lg:max-w-sm mx-auto mt-6 bg-transparent border rounded-full bg-white focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 focus-within:ring-opacity-40">
           <form className="flex bg-white rounded-full">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 h-10 px-1 lg:px-4 py-2 m-0 lg:m-1  text-[#797979] font-semibold placeholder-gray-400 bg-transparent border-none appearance-none focus:outline-none focus:placeholder-transparent focus:ring-0"
+              className="flex-1 h-10 px-1 lg:px-4 py-2 m-0 lg:m-1  text-[#797979] font-semibold placeholder-gray-400 placeholder:pl-2 bg-transparent border-none appearance-none focus:outline-none focus:placeholder-transparent focus:ring-0"
             />
 
             <button
