@@ -70,7 +70,7 @@ const TopProduct = () => {
 
   return (
     <div className="bg-white px-2 py-10">
-      <div className="w-full mx-auto">
+      <div className="w-full lg:w-[1320px] mx-auto">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-[21px] ml-2 lg:text-[60px] font-semibold text-gray-900">
             Top productivity apps
@@ -135,7 +135,7 @@ const TopProduct = () => {
 
 const CustomArrows = ({ next, previous }) => {
   return (
-    <div className="absolute right-0 flex space-x-2 mr-[20px] md:mr-[30px] lg:mr-[80px] z-10 -mt-[520px] lg:-mt-[670px]">
+    <div className="absolute right-0 flex space-x-2 mr-[25px] md:mr-[30px] lg:mr-[90px] z-10 -mt-[520px] lg:-mt-[670px]">
       <button
         onClick={previous}
         className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border border-teal-600 text-teal-600 hover:bg-teal-100 flex items-center justify-center"
