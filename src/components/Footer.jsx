@@ -8,18 +8,18 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="bg-[#00878C] text-white px-6 py-10">
-      <div className="w-full lg:w-[1380px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-teal-600">
+      <div className="w-full lg:w-[1340px] mx-auto flex flex-wrap gap-[50px] lg:gap-[100px] pb-10 border-b border-teal-600">
         {/* Logo & Description */}
-        <div>
-          <h2 className="text-3xl font-bold mb-2">iwatch</h2>
-          <p className="text-[16px] leading-[24px] text-white">
+        <div className="w-[376px]">
+          <h2 className="text-3xl font-bold mb-2">Reddy App</h2>
+          <p className="text-[17px] leading-[24px] text-white">
             Lorem ipsum dolor sit amet consectetur. Pharetra viverra felis
             viverra nibh. Iaculis elit sed facilisis massa purus.
           </p>
         </div>
 
         {/* Services */}
-        <div>
+        <div className="w-[168px]">
           <h3 className="font-semibold text-lg mb-2">Services</h3>
           <ul className="space-y-1 text-[16px] font-[400] leading-[28px] text-white">
             <li className="text-[16px] font-[400]">UX Design</li>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         {/* Company */}
-        <div>
+        <div className="w-[168px]">
           <h3 className="font-semibold text-lg mb-2">Company</h3>
           <ul className="space-y-1 text-white text-[16px] font-[400] leading-[28px]">
             <li>Career</li>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
 
         {/* Location */}
-        <div>
+        <div className="w-[168px]">
           <h3 className="font-semibold text-lg mb-2">Location</h3>
           <p className="text-white text-[16px] font-[400] leading-[28px]">
             Plaza # 35, Z-block, DHA <br />
@@ -54,8 +54,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row items-center justify-between text-sm text-white">
-        <p>©2025 iwatch. All Rights Reserved.</p>
+      <div className="w-[1320px] mx-auto mt-6 flex flex-col md:flex-row items-center justify-between text-sm text-white">
+        <p>©2025 Reddy App. All Rights Reserved.</p>
         <div className="flex space-x-7 mt-4 md:mt-0">
           <FaFacebookF className="text-2xl hover:text-white cursor-pointer" />
           <InstagramOutlined className="text-2xl hover:text-white cursor-pointer" />

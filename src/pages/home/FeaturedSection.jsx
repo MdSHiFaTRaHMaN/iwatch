@@ -16,7 +16,7 @@ const brands = [
 
 const FeaturedSection = () => {
   return (
-    <div className="w-full mx-auto px-3 lg:px-0 py-8 lg:py-16">
+    <div className="w-full mx-auto px-3 lg:px-0 py-8 lg:py-16 mt-[200px] lg:mt-0">
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-3xl lg:text-[60px] font-semibold">Featured on</h2>
@@ -30,7 +30,7 @@ const FeaturedSection = () => {
             key={index}
             src={logo}
             alt={`brand-${index}`}
-            className="h-12 object-contain grayscale hover:grayscale-0 transition"
+            className="h-14 object-contain grayscale hover:grayscale-0 transition"
           />
         ))}
       </div>

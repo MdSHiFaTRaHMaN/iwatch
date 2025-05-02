@@ -26,7 +26,7 @@ const newsData = [
 
 const LatestNews = () => {
   return (
-    <div className="w-full mx-auto px-3 lg:px-6 py-0 lg:py-10">
+    <div className="w-full mx-auto px-3 lg:px-7 py-0 lg:py-10">
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-3xl lg:text-[60px] font-semibold mb-2">Latest news and updates</h2>
@@ -34,9 +34,9 @@ const LatestNews = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+      <div className="grid lg:flex items-center gap-[30px] ">
         {/* First Large Card */}
-        <div className="md:col-span-3">
+        <div className="w-[400px] lg:w-[757px] h-[450px] lg:h-[740px]">
           <Link to="/news-details">
             <div className="relative rounded-lg lg:rounded-2xl overflow-hidden h-full">
               <img
@@ -54,7 +54,7 @@ const LatestNews = () => {
         </div>
 
         {/* Smaller Cards */}
-        <div className="flex flex-col gap-6 md:col-span-2">
+        <div className="flex flex-col gap-6 w-full lg:w-[533px] h-[450px] lg:h-[740px]">
           {newsData.slice(1).map((news, index) => (
             <Link to="/news-details">
               <Card
@@ -63,7 +63,7 @@ const LatestNews = () => {
                   <img
                     alt="news thumbnail"
                     src={news.image}
-                    className="h-[214px] object-cover rounded-none lg:rounded-t-2xl"
+                    className="h-[300px] object-cover rounded-none lg:!rounded-2xl"
                   />
                 }
                 className="cursor-pointer rounded-2xl !shadow-none"
@@ -71,7 +71,7 @@ const LatestNews = () => {
                 bordered={false}
                 
               >
-                <h4 className="text-2xl font-medium">{news.title}</h4>
+                <h4 className="text-[20px] lg:text-[30px] font-[600] whitespace-nowrap">{news.title}</h4>
               </Card>
             </Link>
           ))}

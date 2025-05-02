@@ -14,11 +14,11 @@ import BG from "../assets/images/Group 66.svg"
 const SignUp = () => {
   return (
     <div className="w-full">
-      <div className="flex flex-col md:flex-row w-full my-7 bg-white rounded-2xl overflow-hidden">
+      <div className="flex flex-col md:flex-row w-full  bg-white rounded-2xl overflow-hidden">
         {/* Left Side */}
         <div className="w-full md:w-2/5 p-10">
           <Link to="/">
-            <h1 className="text-teal-700 text-4xl leading-[38px] font-bold mb-6">Reddy App</h1>
+            <h1 className="text-teal-700 text-4xl leading-[38px] font-bold mb-10">Reddy App</h1>
           </Link>
           <h2 className="text-3xl font-semibold mb-2 leading-tight">Sign Up</h2>
           <p className="text-gray-500 mb-8">Start your 30-day free trial.</p>

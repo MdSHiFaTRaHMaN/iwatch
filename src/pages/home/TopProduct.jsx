@@ -10,7 +10,7 @@ const TopProduct = () => {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1200 },
       items: 2,
-      partialVisibilityGutter: 150, // enough to show ~0.5 card
+      partialVisibilityGutter: 150,
     },
     desktop: {
       breakpoint: { max: 1200, min: 992 },
@@ -25,10 +25,9 @@ const TopProduct = () => {
     mobile: {
       breakpoint: { max: 767, min: 0 },
       items: 1,
-      partialVisibilityGutter: 30,
+      partialVisibilityGutter: 0,
     },
   };
-  
 
   const apps = [
     {
@@ -70,48 +69,49 @@ const TopProduct = () => {
   ];
 
   return (
-    <div className="bg-white px-2 md:px-11 py-10">
+    <div className="bg-white px-2 py-10">
       <div className="w-full mx-auto">
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-[21px] ml-2 lg:text-[60px]  font-semibold text-gray-900">
+          <h2 className="text-[21px] ml-2 lg:text-[60px] font-semibold text-gray-900">
             Top productivity apps
           </h2>
         </div>
 
         <Carousel
-        responsive={responsive}
-        arrows={false}
-        customButtonGroup={<CustomArrows />}
-        renderButtonGroupOutside
-        itemClass="px-[15px]"
-        swipeable
-        additionalTransfrom={0}
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite
-        keyBoardControl
-        minimumTouchDrag={80}
-        partialVisible
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderDotsOutside={false}
+          responsive={responsive}
+          arrows={false}
+          customButtonGroup={<CustomArrows />}
+          renderButtonGroupOutside
+          itemClass="px-[15px]"
+          swipeable
+          additionalTransfrom={0}
+          autoPlaySpeed={3000}
+          centerMode={false}
+          // className="pr-[30px]"
+          containerClass="container"
+          dotListClass=""
+          draggable
+          focusOnSelect={false}
+          infinite
+          keyBoardControl
+          minimumTouchDrag={80}
+          partialVisible
+          pauseOnHover
+          renderArrowsWhenDisabled={false}
+          renderDotsOutside={false}
         >
           {apps.map((app, idx) => (
             <div
               key={idx}
-              className={`${app.bgColor} text-white p-5 rounded-2xl h-[400px] lg:h-[480px] flex flex-col justify-between relative overflow-hidden`}
+              // className={`${app.bgColor} text-white p-5 rounded-[19px] h-[480px] flex flex-col justify-between relative overflow-hidden`}
+              className={`${app.bgColor} text-white p-5 rounded-[19px] w-full lg:w-[499px] h-[450px] lg:h-[570px] flex flex-col justify-between relative overflow-hidden`}
             >
               <div className="z-10 relative">
-                <h3 className="text-[24px]  px-7 md:text-[36px] font-[600] mb-4">
+                <h3 className="text-[24px] px-7 md:text-[36px] font-[600] mb-4">
                   {app.title}
                 </h3>
-                <p className="text-lg px-7">{app.description}</p>
-                <button className="mt-[138px] md:mt-[198px] flex items-center gap-2 text-[14px] font-semibold border border-white px-5 py-2 rounded-full text-white hover:bg-white hover:text-teal-700 transition">
+                <p className="text-lg px-7 h-[56px]">{app.description}</p>
+                <button className="mt-[218px] md:mt-[290px] flex items-center ml-[30px] gap-2 text-[14px] font-semibold border-[3px] border-white px-5 py-2 rounded-full text-white hover:bg-white hover:text-teal-700 transition">
                   {app.btnText}
                   <span className="bg-white text-teal-700 rounded-full p-3">
                     <GoArrowUpRight />
@@ -119,12 +119,11 @@ const TopProduct = () => {
                 </button>
               </div>
 
-              {/* Phone Images */}
-              <div className="absolute flex gap-2 z-0 opacity-50 mt-[130px] py-3">
+              <div className="absolute flex gap-2 z-0 opacity-50 mt-[120px] lg:mt-[150px] -ml-[50px] lg:-ml-[70px] py-3 w-[540px]">
                 <img
-                  src={Mobile}
+                  src={app.image}
                   alt=""
-                  className="w-[320px] md:w-[320px] lg:w-[450px]"
+                  className="w-[420px] md:w-[320px] lg:w-[590px]"
                 />
               </div>
             </div>
@@ -135,10 +134,9 @@ const TopProduct = () => {
   );
 };
 
-// Custom Arrows placed top-right
 const CustomArrows = ({ next, previous }) => {
   return (
-    <div className="absolute right-0 flex space-x-2 mr-[20px] md:mr-[30px] lg:mr-[120px] z-10 -mt-[470px] lg:-mt-[570px]">
+    <div className="absolute right-0 flex space-x-2 mr-[20px] md:mr-[30px] lg:mr-[80px] z-10 -mt-[520px] lg:-mt-[670px]">
       <button
         onClick={previous}
         className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border border-teal-600 text-teal-600 hover:bg-teal-100 flex items-center justify-center"
