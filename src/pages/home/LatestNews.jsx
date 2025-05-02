@@ -36,7 +36,7 @@ const LatestNews = () => {
       {/* Grid */}
       <div className="grid lg:flex items-center gap-[30px] ">
         {/* First Large Card */}
-        <div className="w-[400px] lg:w-[757px] h-[450px] lg:h-[740px]">
+        <div className="w-full lg:w-[757px] h-[450px] lg:h-[740px]">
           <Link to="/news-details">
             <div className="relative rounded-lg lg:rounded-2xl overflow-hidden h-full">
               <img
@@ -45,7 +45,7 @@ const LatestNews = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/70 to-transparent w-full text-white">
-                <h3 className="text-2xl lg:text-[45px] font-bold leading-snug">
+                <h3 className="text-xl lg:text-[45px] font-bold leading-snug">
                 Designing User-Friendly and interactive Smartwatch <br /> Interfaces
                 </h3>
               </div>
@@ -71,7 +71,7 @@ const LatestNews = () => {
                 bordered={false}
                 
               >
-                <h4 className="text-[20px] lg:text-[30px] font-[600] whitespace-nowrap">{news.title}</h4>
+                <h4 className="text-[20px] lg:text-[30px] font-[600] whitespace-normal lg:whitespace-nowrap">{news.title}</h4>
               </Card>
             </Link>
           ))}

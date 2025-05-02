@@ -7,141 +7,121 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
- // Scroll Event
+
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // Menu Items
+
   const productsMenu = (
     <Menu>
-      <Menu.Item key="1" className="cursor-pointer text-[#797979]">
-        Product 1
+      <Menu.Item key="1">
+        <Link to="/products/1" className="text-[#797979]">Product 1</Link>
       </Menu.Item>
-      <Menu.Item key="2" className="cursor-pointer text-[#797979]">
-        Product 2
+      <Menu.Item key="2">
+        <Link to="/products/2" className="text-[#797979]">Product 2</Link>
       </Menu.Item>
-    </Menu>
-  );
- // More Items
-  const moreMenu = (
-    <Menu>
-      <Menu.Item key="1">About Us</Menu.Item>
-      <Menu.Item key="2">Contact</Menu.Item>
     </Menu>
   );
 
-  const openDrawer = () => setVisible(true);
-  const closeDrawer = () => setVisible(false);
+  const moreMenu = (
+    <Menu>
+      <Menu.Item key="1">
+        <Link to="/about" className="text-[#797979]">About Us</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/contact" className="text-[#797979]">Contact</Link>
+      </Menu.Item>
+    </Menu>
+  );
 
   return (
     <header
-      className={`px-4 py-5 fixed top-0 z-40 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white bg-opacity-100 py-3 shadow-md" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 py-4 ${
+        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent"
       }`}
     >
-      <div
-        className={`w-full lg:w-[1380px] px-0 lg:px-5 mx-auto flex items-center justify-between`}
-      >
-        <Link to="/">
-          <div className="text-3xl font-bold text-teal-700">Reddy App</div>
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-2xl md:text-3xl font-bold text-teal-700">
+          Reddy App
         </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-10 text-gray-600">
-          <Link
-            to="/"
-            className="text-[#00878C] text-[16px] font-medium"
-            href="#"
-          >
-            Home
-          </Link>
-          <Dropdown
-            overlay={productsMenu}
-            className="flex items-center text-[#797979] gap-1 cursor-pointer"
-          >
-            <span className="cursor-pointer flex items-center gap-1 font-medium">
-              Products <FaAngleDown className="text-[#797979]" />
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <Link to="/" className="text-[#00878C]">Home</Link>
+
+          <Dropdown overlay={productsMenu}>
+            <span className="cursor-pointer flex items-center gap-1 text-[#797979]">
+              Products <FaAngleDown />
             </span>
           </Dropdown>
-          <a href="#" className="text-[#797979] font-medium">
-            Blog
-          </a>
-          <Dropdown
-            overlay={moreMenu}
-            className="flex items-center text-[#797979] gap-1 cursor-pointer"
-          >
-            <a
-              onClick={(e) => e.preventDefault()}
-              className="cursor-pointer font-medium"
-            >
-              More <FaAngleDown className="text-[#797979]" />
-            </a>
+
+          <Link to="/blog" className="text-[#797979]">Blog</Link>
+
+          <Dropdown overlay={moreMenu}>
+            <span className="cursor-pointer flex items-center gap-1 text-[#797979]">
+              More <FaAngleDown />
+            </span>
           </Dropdown>
-          <a href="#" className="text-[#797979] font-medium">
-            Careers
-          </a>
+
+          <Link to="/careers" className="text-[#797979]">Careers</Link>
+
           <Link to="/login" target="_blank">
             <Button
               shape="round"
-              className="bg-teal-700 text-[14px] font-semibold border-none hover:!bg-teal-800 w-[120px] !text-white h-[44px]"
+              className="bg-teal-700 text-white font-semibold border-none hover:!bg-teal-800 px-5 h-[40px]"
             >
               Login
             </Button>
           </Link>
         </nav>
 
-        {/* Mobile Hamburger */}
-        <div className="block md:hidden">
-          <Button icon={<LuMenu />} onClick={openDrawer} />
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <Button
+            icon={<LuMenu className="text-xl" />}
+            type="text"
+            onClick={() => setVisible(true)}
+          />
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       <Drawer
         title="Menu"
         placement="right"
-        onClose={closeDrawer}
-        visible={visible}
+        onClose={() => setVisible(false)}
+        open={visible}
       >
-        <Link className="block mb-2 text-teal-700 font-medium" to="/">
+        <Link className="block mb-3 text-teal-700 font-medium" to="/" onClick={() => setVisible(false)}>
           Home
         </Link>
         <Dropdown overlay={productsMenu} trigger={["click"]}>
-          <a
-            onClick={(e) => e.preventDefault()}
-            className="mb-2 flex items-center font-medium text-[#797979] gap-1 cursor-pointer"
-          >
+          <span className="block mb-3 text-[#797979] font-medium cursor-pointer flex items-center gap-1">
             Products <FaAngleDown />
-          </a>
+          </span>
         </Dropdown>
-        <a className="block mb-2 text-[#797979] font-medium" href="#">
+        <Link className="block mb-3 text-[#797979]" to="/blog" onClick={() => setVisible(false)}>
           Blog
-        </a>
+        </Link>
         <Dropdown overlay={moreMenu} trigger={["click"]}>
-          <a
-            onClick={(e) => e.preventDefault()}
-            className="mb-2 flex items-center text-[#797979] font-medium gap-1 cursor-pointer"
-          >
+          <span className="block mb-3 text-[#797979] font-medium cursor-pointer flex items-center gap-1">
             More <FaAngleDown />
-          </a>
+          </span>
         </Dropdown>
-        <a className="block mb-4 text-[#797979] font-medium" href="#">
+        <Link className="block mb-4 text-[#797979]" to="/careers" onClick={() => setVisible(false)}>
           Careers
-        </a>
+        </Link>
         <Link to="/login" target="_blank">
           <Button
             type="primary"
             shape="round"
-            className="bg-teal-700 border-none w-full"
+            className="bg-teal-700 w-full"
           >
             Login
           </Button>

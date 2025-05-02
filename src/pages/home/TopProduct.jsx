@@ -87,7 +87,6 @@ const TopProduct = () => {
           additionalTransfrom={0}
           autoPlaySpeed={3000}
           centerMode={false}
-          // className="pr-[30px]"
           containerClass="container"
           dotListClass=""
           draggable
@@ -104,7 +103,7 @@ const TopProduct = () => {
             <div
               key={idx}
               // className={`${app.bgColor} text-white p-5 rounded-[19px] h-[480px] flex flex-col justify-between relative overflow-hidden`}
-              className={`${app.bgColor} text-white p-5 rounded-[19px] w-full lg:w-[499px] h-[450px] lg:h-[570px] flex flex-col justify-between relative overflow-hidden`}
+              className={`${app.bgColor} text-white p-5 rounded-[19px] w-full mx-auto lg:w-[465px] h-[450px] lg:h-[570px] flex flex-col justify-between relative overflow-hidden`}
             >
               <div className="z-10 relative">
                 <h3 className="text-[24px] px-7 md:text-[36px] font-[600] mb-4">
