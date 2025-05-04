@@ -41,13 +41,13 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 px-0 py-4 ${
-        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 px-0 py-7 ${
+        isScrolled ? "bg-white shadow-md !py-4" : "bg-transparent"
       }`}
     >
       <div className="max-w-[1320px] mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl md:text-3xl font-bold text-teal-700">
+        <Link to="/" className="text-2xl md:text-4xl font-bold text-teal-700">
           Reddy App
         </Link>
 

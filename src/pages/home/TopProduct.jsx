@@ -135,7 +135,7 @@ const TopProduct = () => {
 
 const CustomArrows = ({ next, previous }) => {
   return (
-    <div className="absolute right-0 flex space-x-2 mr-[25px] md:mr-[30px] lg:mr-[90px] z-10 -mt-[520px] lg:-mt-[670px]">
+    <div className="absolute right-0 flex space-x-2 mr-[25px] md:mr-[30px] lg:mr-[98px] z-10 -mt-[520px] lg:-mt-[670px]">
       <button
         onClick={previous}
         className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border border-teal-600 text-teal-600 hover:bg-teal-100 flex items-center justify-center"
