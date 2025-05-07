@@ -1,13 +1,11 @@
 import React from "react";
-import {
-  UploadOutlined,
-  FileTextOutlined,
-  MoreOutlined,
-} from "@ant-design/icons";
+import { MoreOutlined } from "@ant-design/icons";
 import { Progress, Avatar, Button } from "antd";
 import { FiDownloadCloud } from "react-icons/fi";
 import { FaArrowDown } from "react-icons/fa";
 import { FaRegFilePdf } from "react-icons/fa6";
+import { HiOutlineClipboardDocument } from "react-icons/hi2";
+import Background from "../../assets/images/backdashboard.jpg";
 
 const files = [
   { name: "Project Description", size: "5 MB", date: "15 Feb, 2023" },
@@ -21,7 +19,7 @@ const files = [
 
 const Dashboard = () => {
   return (
-    <div className="p-6 bg-white min-h-screen grid grid-cols-1 xl:grid-cols-3 gap-6">
+    <div className="bg-white min-h-screen grid grid-cols-1 xl:grid-cols-3 gap-6">
       {/* Left Side (Upload + Recent Files) */}
       <div className="xl:col-span-2 space-y-6">
         <div className="bg-[#F7F7F7] rounded-xl h-[220px]">
@@ -58,31 +56,31 @@ const Dashboard = () => {
               View All
             </button>
           </div>
-          <div className="overflow-x-auto px-6 py-4">
-            <table className="w-full text-sm text-left">
+          <div className="overflow-x-auto p-5">
+            <table className="w-full text-sm text-left bg-white rounded-xl p-6">
               <thead>
                 <tr className="text-[#515151] text-sm font-medium border-b border-gray-100">
-                  <th className="pb-2 flex items-center gap-2">
+                  <th className="p-6 flex items-center gap-2">
                     Name <FaArrowDown />
                   </th>
                   <th className="pb-2">Size</th>
                   <th className="pb-2">Last Modified</th>
-                  <th className="pb-2 text-right">Action</th>
+                  <th className="pb-2 text-right pr-6">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="px-6">
                 {files.map((file, index) => (
                   <tr
                     key={index}
-                    className="border-b border-gray-100 hover:bg-gray-50"
+                    className="border-b border-gray-100 hover:bg-gray-50 px-6"
                   >
-                    <td className="py-3 flex items-center gap-3 text-[#646464] text-sm font-medium">
+                    <td className="py-3 px-6  flex items-center gap-3 text-[#646464] text-sm font-medium">
                       <FaRegFilePdf className="text-[#DC2C2F] text-lg" />
                       {file.name}
                     </td>
                     <td className="py-3 text-[#646464] text-sm">{file.size}</td>
                     <td className="py-3 text-[#646464] text-sm">{file.date}</td>
-                    <td className="py-3 text-right text-gray-400">
+                    <td className="py-3 text-right text-gray-400 pr-6">
                       <MoreOutlined className="cursor-pointer text-4xl rotate-90 text-[#8B8B8B" />
                     </td>
                   </tr>
@@ -94,19 +92,21 @@ const Dashboard = () => {
       </div>
 
       {/* Right Side (Storage & Promo) */}
-      <div className="space-y-6 bg-[#F7F7F7] rounded-xl p-6">
+      <div className="space-y-6 bg-[#F7F7F7] rounded-xl p-5">
         {/* My Storage Card */}
         <div className="">
-          <h3 className="text-lg font-semibold mb-4">My Storage</h3>
-          <div className="flex items-center justify-center mb-4">
+          <h3 className="text-xl text-[#000000] font-semibold mb-4">
+            My Storage
+          </h3>
+          <div className="flex items-center justify-center mb-4 rotate-[70deg] w-[368px]">
             <Progress
               type="circle"
               percent={85}
-              strokeWidth={15}
+              strokeWidth={18}
               width={256}
               strokeColor="#00878C"
               format={(percent) => (
-                <div>
+                <div className="-rotate-[70deg]">
                   <div className="text-4xl font-bold">{percent}%</div>
                   <div className="text-base font-medium text-[#797979]">
                     Total 1 TB
@@ -116,38 +116,51 @@ const Dashboard = () => {
             />
           </div>
           <div className="ml-7 text-sm text-gray-600">
-            <div>
-              <p>
-                Total Used{" "}
-                <span className="text-gray-800 font-medium">85.2 GB</span>
+            <div className="flex items-center gap-[12px]">
+              <div className="bg-[#00878C] w-[20px] h-[20px] rounded-full"></div>
+              <p className="text-base text-[#797979] font-medium">
+                Total Used 85.2 GB
               </p>
             </div>
-            <p>
-              Total Left{" "}
-              <span className="text-gray-800 font-medium">14.8 GB</span>
-            </p>
-          </div>
-          <div className="mt-4 flex items-center gap-3 bg-gray-50 rounded-md p-3">
-            <FileTextOutlined className="text-xl text-teal-500" />
-            <div>
-              <p className="text-sm font-medium">Documents</p>
-              <p className="text-xs text-gray-400">1,275 files</p>
+            <div className="flex items-center gap-[12px] mt-[12px]">
+              <div className="bg-[#E5F5F4] w-[20px] h-[20px] rounded-full"></div>
+              <p className="text-base text-[#797979] font-medium">
+                Total Left 14.8 GB
+              </p>
             </div>
-            <div className="ml-auto font-medium text-sm">85 GB</div>
+          </div>
+          <div className="mt-4 flex items-center gap-3 bg-[#FFFFFF] rounded-xl p-3">
+            <HiOutlineClipboardDocument className="text-4xl text-[#00878C]" />
+            <div>
+              <p className="text-lg font-medium">Documents</p>
+              <p className="text-sm text-[#797979]">1,275 files</p>
+            </div>
+            <div className="ml-auto font-medium text-sm text-[#797979]">
+              85 GB
+            </div>
           </div>
         </div>
-
         {/* Upgrade Card */}
-        <div className="bg-teal-600 rounded-xl shadow-sm p-6 text-white text-center">
-          <h3 className="text-lg font-semibold mb-2">
-            Upgrade to Pro for Unlimited Storage
-          </h3>
-          <Button
-            type="primary"
-            className="bg-white text-teal-600 font-medium mt-2 rounded-full"
-          >
-            Upgrade Now
-          </Button>
+        <div
+          style={{
+            backgroundImage: `url(${Background})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="rounded-2xl shadow-md p-8 w-[368px] h-[314px]  text-white text-center relative overflow-hidden"
+        >
+          {/* Optional overlay for dim effect */}
+          <div className="absolute inset-0 bg-[#00878CDB] opacity-100 z-0"></div>
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center mt-[40px]">
+            <h3 className="text-[32px] font-semibold mb-4">
+              Upgrade to Pro for <br /> Unlimited Storage
+            </h3>
+            <button className="bg-white text-[#00878C] font-semibold text-base mt-2 w-[166px] h-[52px] rounded-full px-6 py-2 shadow">
+              Upgrade Now
+            </button>
+          </div>
         </div>
       </div>
     </div>

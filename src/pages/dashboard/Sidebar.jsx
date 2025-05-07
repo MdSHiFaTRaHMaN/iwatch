@@ -7,6 +7,7 @@ import {
   } from "@ant-design/icons";
   import Sider from "antd/es/layout/Sider";
   import React, { useState } from "react";
+import { Link } from "react-router-dom";
   
   const Sidebar = () => {
     const [activeKey, setActiveKey] = useState("dashboard");
@@ -22,7 +23,7 @@ import {
       {
         label: "Chat",
         items: [
-          { key: "chat", label: "Chat", icon: <MessageOutlined /> },
+          { key: "chat", label: <Link to="/chat">Chat</Link>, icon: <MessageOutlined /> },
         ],
       },
       {
@@ -35,7 +36,7 @@ import {
     ];
   
     return (
-      <Sider width={248} className="bg-[#F7F7F7] h-screen">
+      <Sider width={248} className="bg-[#F7F7F7] h-[133vh]">
         <div className="text-[#00878C] text-4xl font-extrabold text-center py-6">
           Reddy
         </div>
@@ -53,7 +54,7 @@ import {
                       ${
                         activeKey === item.key
                           ? "bg-[#E5F5F4] text-[#00878C]"
-                          : "text-gray-700 hover:bg-gray-200"
+                          : "text-[#797979] hover:bg-gray-200"
                       }`}
                   >
                     {item.icon}

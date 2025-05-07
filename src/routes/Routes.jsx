@@ -6,6 +6,8 @@ import SignUp from "../pages/SignUp";
 import NewsDetails from "../pages/newsdetails/NewsDetails";
 import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
+import ErrorPage from "../components/ErrorPage";
+import Chatpage from "../pages/chatpage/Chatpage";
 
 const routes = createBrowserRouter([
   {
@@ -20,11 +22,11 @@ const routes = createBrowserRouter([
         path: "/news-details",
         element: <NewsDetails />,
       },
+      {
+        path: "*",
+        element: <ErrorPage />
+      }
     ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
   {
     path: "/signup",
@@ -33,6 +35,14 @@ const routes = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardLayout />,
+  },
+  {
+    path: "/chat",
+    element: <Chatpage />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />
   }
 ]);
 export default routes;

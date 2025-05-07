@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        comic: ["Comic Relief", "cursive"],
+        chatFont: ["Josefin Sans", "sans-serif"],
+        messageFont: ["Satoshi", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }
