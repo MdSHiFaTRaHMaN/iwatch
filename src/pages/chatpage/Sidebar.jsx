@@ -76,10 +76,10 @@ const Sidebar = () => {
       </div>
 
       <div className="mt-4 text-sm text-gray-500 border-t pt-4 space-y-2">
-        <div className="flex items-center gap-2 border rounded-full py-3 px-4">
+        <div className="flex items-center gap-2 border rounded-full py-3 px-4 text-black font-medium">
           <span className="bg-gray-300 p-2 rounded-full"><FiSettings /></span> Settings
         </div>
-        <div className="flex items-center gap-2  border rounded-full py-3 px-4">
+        <div className="flex items-center gap-2 text-black font-medium  border rounded-full py-3 px-4">
           <img
             src="https://i.pravatar.cc/40"
             className="w-6 h-6 rounded-full"

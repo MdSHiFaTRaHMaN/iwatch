@@ -3,6 +3,7 @@ import { SendOutlined } from "@ant-design/icons";
 import MessageBubble from "./MessageBubble";
 import {
   FaEdit,
+  FaHome,
   FaMapMarkerAlt,
   FaRegCommentDots,
   FaRobot,
@@ -13,8 +14,10 @@ import { GrSend } from "react-icons/gr";
 import { SlDislike } from "react-icons/sl";
 import { SlLike } from "react-icons/sl";
 import { FiCopy } from "react-icons/fi";
-import { PiDotsThreeOutlineVertical } from "react-icons/pi";
+import { PiBrain, PiDotsThreeOutlineVertical } from "react-icons/pi";
 import { HiOutlineRefresh } from "react-icons/hi";
+import { IoMdAddCircleOutline } from "react-icons/io";
+import { GiBrain } from "react-icons/gi";
 
 const ChatContainer = () => {
   const [editMessage, setEditMessage] = useState(false);
@@ -230,13 +233,14 @@ const ChatContainer = () => {
           </div>
 
           {/* Input Bar */}
-          <div className="flex items-center w-full border rounded-full p-1 px-4 shadow-inner bg-white absolute sticky bottom-6">
+          <div className="flex items-center w-full border rounded-full p-1 px-4 shadow-inner bg-white sticky bottom-6">
+            <PiBrain className="text-2xl text-red-600 absolute" />
             <input
               type="text"
               placeholder="What's in your mind?..."
-              className="flex-grow outline-none text-sm text-gray-700"
+              className="flex-grow outline-none text-sm text-gray-700 ml-10"
             />
-            <button className="ml-2 bg-blue-500 text-white px-3 py-3 mx-auto rounded-full hover:bg-blue-600 transition">
+            <button className="ml-2 bg-indigo-600 text-white px-3 py-3 mx-auto rounded-full hover:bg-blue-600 transition">
               <GrSend />
             </button>
           </div>
