@@ -78,9 +78,9 @@ const Dashboard = () => {
                       <FaRegFilePdf className="text-[#DC2C2F] text-lg" />
                       {file.name}
                     </td>
-                    <td className="py-3 text-[#646464] text-sm">{file.size}</td>
-                    <td className="py-3 text-[#646464] text-sm">{file.date}</td>
-                    <td className="py-3 text-right text-gray-400 pr-6">
+                    <td className="py-[13px] text-[#646464] text-sm">{file.size}</td>
+                    <td className="py-[13px] text-[#646464] text-sm">{file.date}</td>
+                    <td className="py-[13px] text-right text-gray-400 pr-6">
                       <MoreOutlined className="cursor-pointer text-4xl rotate-90 text-[#8B8B8B" />
                     </td>
                   </tr>
