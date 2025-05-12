@@ -5,9 +5,11 @@ import ChatContainer from "./ChatContainer";
 const Chatpage = () => {
   return (
     <div className="bg-gray-100">
-      <div className="flex gap-[150px] h-screen font-messageFont bg-[#F7FAFC]">
+      <div className="flex h-screen font-messageFont bg-[#F7FAFC]">
         <Sidebar />
-        <ChatContainer />
+        <div className="flex-1">
+          <ChatContainer />
+        </div>
       </div>
     </div>
   );

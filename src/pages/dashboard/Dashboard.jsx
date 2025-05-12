@@ -49,7 +49,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Files Table */}
-        <div className="bg-[#F7F7F7] rounded-xl shadow-sm">
+        <div className="bg-[#F7F7F7] rounded-xl shadow-sm !overflow-x-auto">
           <div className="flex items-center justify-between px-6 pt-6">
             <h2 className="text-xl font-semibold">Recent Files</h2>
             <button className="text-base text-[#00878C] font-medium">
@@ -63,9 +63,9 @@ const Dashboard = () => {
                   <th className="p-6 flex items-center gap-2">
                     Name <FaArrowDown />
                   </th>
-                  <th className="pb-2">Size</th>
-                  <th className="pb-2">Last Modified</th>
-                  <th className="pb-2 text-right pr-6">Action</th>
+                  <th className="p-2">Size</th>
+                  <th className="p-2 whitespace-nowrap px-2">Last Modified</th>
+                  <th className="p-2 text-right pr-6">Action</th>
                 </tr>
               </thead>
               <tbody className="px-6">
@@ -74,7 +74,7 @@ const Dashboard = () => {
                     key={index}
                     className="border-b border-gray-100 hover:bg-gray-50 px-6"
                   >
-                    <td className="py-3 px-6  flex items-center gap-3 text-[#646464] text-sm font-medium">
+                    <td className="py-3 px-6 mt-2 whitespace-nowrap flex items-center gap-3 text-[#646464] text-sm font-medium">
                       <FaRegFilePdf className="text-[#DC2C2F] text-lg" />
                       {file.name}
                     </td>
@@ -147,14 +147,14 @@ const Dashboard = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="rounded-2xl shadow-md p-8 w-[368px] h-[314px]  text-white text-center relative overflow-hidden"
+          className="rounded-2xl shadow-md p-8 w-full lg:w-[368px] h-[314px] lg:h-[314px]  text-white text-center relative overflow-hidden"
         >
           {/* Optional overlay for dim effect */}
           <div className="absolute inset-0 bg-[#00878CDB] opacity-100 z-0"></div>
 
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center justify-center mt-[40px]">
-            <h3 className="text-[32px] font-semibold mb-4">
+            <h3 className="text-3xl lg:text-[32px] font-semibold mb-4">
               Upgrade to Pro for <br /> Unlimited Storage
             </h3>
             <button className="bg-white text-[#00878C] font-semibold text-base mt-2 w-[166px] h-[52px] rounded-full px-6 py-2 shadow">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { SendOutlined } from "@ant-design/icons";
-import MessageBubble from "./MessageBubble";
 import {
   FaEdit,
   FaHome,
@@ -28,9 +27,9 @@ const ChatContainer = () => {
   const chat2 = "What is use of that chatbot ?";
 
   return (
-    <div className="flex-1 flex flex-col justify-between overflow-y-auto pt-14">
+    <div className="flex-1 flex flex-col justify-between overflow-y-auto pt-0 lg:pt-0">
       <div className="min-h-screen p-6 flex justify-center items-center relative">
-        <div className="w-10/12 mx-auto mt-6 space-y-1.5">
+        <div className="w-full lg:w-10/12 mx-auto mt-6 space-y-1.5">
           {/* Question Prompt */}
           <div className="text-sm text-gray-900 flex items-center justify-between mb-1">
             <div className="flex items-start gap-2 w-full">
@@ -233,7 +232,7 @@ const ChatContainer = () => {
           </div>
 
           {/* Input Bar */}
-          <div className="flex items-center w-full border rounded-full p-1 px-4 shadow-inner bg-white sticky bottom-6">
+          <div className="flex items-center w-full border rounded-full p-1 px-4 shadow-inner bg-white  bottom-3">
             <PiBrain className="text-2xl text-red-600 absolute" />
             <input
               type="text"
