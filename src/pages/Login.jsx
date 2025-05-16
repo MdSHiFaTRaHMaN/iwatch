@@ -4,7 +4,7 @@ import { Input, Button, Checkbox } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import LoginImage from "../assets/images/Group 66.svg"
+import LoginImage from "../assets/images/Group 66.svg";
 
 const Login = () => {
   return (
@@ -56,16 +56,22 @@ const Login = () => {
               </a>
             </div>
 
-            <Button
-              type="primary"
-              size="large"
-              className="w-full text-base font-semibold bg-teal-700 hover:!bg-teal-800 rounded-md"
-            >
-              Sign In
-            </Button>
+            <Link to="/dashboard">
+              <Button
+                type="primary"
+                size="large"
+                className="w-full mt-2 text-base font-semibold bg-teal-700 hover:!bg-teal-800 rounded-md"
+              >
+                Sign In
+              </Button>
+            </Link>
 
             <Button
-              icon={<div className="text-2xl"><FcGoogle /></div>}
+              icon={
+                <div className="text-2xl">
+                  <FcGoogle />
+                </div>
+              }
               size="large"
               className="w-full border rounded-md text-base font-semibold text-[#344054] flex items-center justify-center"
             >
@@ -73,7 +79,11 @@ const Login = () => {
             </Button>
 
             <Button
-              icon={<div className="text-2xl text-black"><BsApple /></div>}
+              icon={
+                <div className="text-2xl text-black">
+                  <BsApple />
+                </div>
+              }
               size="large"
               className="w-full border rounded-md text-base font-semibold text-[#344054] flex items-center justify-center"
             >

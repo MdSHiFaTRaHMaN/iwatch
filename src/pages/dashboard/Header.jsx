@@ -1,10 +1,25 @@
 import React from "react";
-import { Input, Avatar, Button } from "antd";
+import { Input, Avatar, Button, Dropdown, Menu } from "antd";
 import { FiSearch } from "react-icons/fi";
-import { MenuOutlined } from "@ant-design/icons";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
 import Profile from "../../assets/images/mac.png";
 
 const Header = ({ setIsDrawerVisible }) => {
+  const menu = (
+    <Menu
+      items={[
+        {
+          label: "My Profile",
+          key: "profile",
+        },
+        {
+          label: "Logout",
+          key: "logout",
+          danger: true,
+        },
+      ]}
+    />
+  );
   return (
     <div className="flex sm:items-center justify-between px-4 sm:px-6 py-4 bg-white shadow-sm gap-4 sm:gap-0">
       {/* Left: Title */}
@@ -24,11 +39,17 @@ const Header = ({ setIsDrawerVisible }) => {
 
       {/* Right: User Info */}
       <div className="flex items-center justify-end gap-3">
-        <Avatar src={Profile} />
-        <div className="hidden sm:block leading-tight">
-          <div className="font-medium text-sm">Mac Allister</div>
-          <div className="text-xs text-gray-500">@macallister</div>
-        </div>
+        <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight">
+          <div className="hidden sm:flex leading-tight cursor-pointer select-none">
+            <Avatar src={Profile} />
+            <div>
+            <div className="font-medium text-sm">Mac Allister</div>
+              <h4 className="text-xs text-gray-500 flex items-center gap-1">
+                @macallister <DownOutlined className="text-xs" />
+              </h4>
+            </div>
+          </div>
+        </Dropdown>
         <Button
           type="text"
           icon={<MenuOutlined />}

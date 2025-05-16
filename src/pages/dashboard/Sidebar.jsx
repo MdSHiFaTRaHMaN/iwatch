@@ -20,51 +20,80 @@ const Sidebar = ({ setIsDrawerVisible, isDrawerVisible }) => {
     {
       label: "Menu",
       items: [
-        { key: "dashboard", label: "Dashboard", icon: <AppstoreOutlined /> },
-        { key: "files", label: "Shared Files", icon: <FileOutlined /> },
+        {
+          key: "dashboard",
+          label: "Dashboard",
+          icon: <AppstoreOutlined />,
+          link: "/dashboard",
+        },
+        {
+          key: "files",
+          label: "Shared Files",
+          icon: <FileOutlined />,
+          link: "/dashboard/files",
+        },
       ],
     },
     {
       label: "Chat",
       items: [
-        { key: "chat", label: <Link to="/chat">Chat</Link>, icon: <MessageOutlined /> },
+        {
+          key: "chat",
+          label: "Chat",
+          icon: <MessageOutlined />,
+          link: "/chat",
+        },
       ],
     },
     {
       label: "Others",
       items: [
-        { key: "help", label: "Help", icon: <QuestionCircleOutlined /> },
-        { key: "settings", label: "Settings", icon: <SettingOutlined /> },
+        {
+          key: "help",
+          label: "Help",
+          icon: <QuestionCircleOutlined />,
+          link: "/dashboard/help",
+        },
+        {
+          key: "settings",
+          label: "Settings",
+          icon: <SettingOutlined />,
+          link: "/dashboard/settings",
+        },
       ],
     },
   ];
 
   const SidebarContent = () => (
     <div className="px-4 space-y-6">
-      <div className="text-[#00878C] text-3xl font-extrabold text-center py-6">
-        Reddy
+      <div className="text-[#00878C] text-3xl font-bold text-center py-6">
+        Reddy App
       </div>
       {menuGroups.map((group) => (
         <div key={group.label}>
-          <div className="text-xs font-medium text-[#8B8B8B] mb-2 ml-4">{group.label}</div>
+          <div className="text-xs font-medium text-[#8B8B8B] mb-2 ml-4">
+            {group.label}
+          </div>
           <div className="flex flex-col space-y-1">
             {group.items.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => {
-                  setActiveKey(item.key);
-                  if (isMobile) setIsDrawerVisible(false);
-                }}
-                className={`flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-lg transition-all
+              <Link to={item.link} key={item.key} className="w-full">
+                  <button
+                    key={item.key}
+                    onClick={() => {
+                      setActiveKey(item.key);
+                      if (isMobile) setIsDrawerVisible(false);
+                    }}
+                    className={`flex w-full items-center gap-3 px-4 py-2 text-sm font-medium rounded-lg transition-all
                   ${
                     activeKey === item.key
                       ? "bg-[#E5F5F4] text-[#00878C]"
                       : "text-[#797979] hover:bg-gray-200"
                   }`}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </button>
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </button>
+              </Link>
             ))}
           </div>
         </div>

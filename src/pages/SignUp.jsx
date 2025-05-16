@@ -9,7 +9,7 @@ import { Input, Button, Checkbox } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import BG from "../assets/images/Group 66.svg"
+import BG from "../assets/images/Group 66.svg";
 
 const SignUp = () => {
   return (
@@ -18,7 +18,9 @@ const SignUp = () => {
         {/* Left Side */}
         <div className="w-full md:w-2/5 p-10">
           <Link to="/">
-            <h1 className="text-teal-700 text-4xl leading-[38px] font-bold mb-10">Reddy App</h1>
+            <h1 className="text-teal-700 text-4xl leading-[38px] font-bold mb-10">
+              Reddy App
+            </h1>
           </Link>
           <h2 className="text-3xl font-semibold mb-2 leading-tight">Sign Up</h2>
           <p className="text-gray-500 mb-8">Start your 30-day free trial.</p>
@@ -63,16 +65,22 @@ const SignUp = () => {
                 className="mt-1.5 py-3 placeholder:text-[#667085]"
               />
             </div>
-            <Button
-              type="primary"
-              size="large"
-              className="w-full text-base font-semibold !py-3 bg-teal-700 hover:!bg-teal-800 rounded-md"
-            >
-              Sign In
-            </Button>
+            <Link to="/dashboard">
+              <Button
+                type="primary"
+                size="large"
+                className="w-full mt-3 text-base font-semibold !py-3 bg-teal-700 hover:!bg-teal-800 rounded-md"
+              >
+                Sign In
+              </Button>
+            </Link>
 
             <Button
-              icon={<div className="text-2xl"><FcGoogle /></div>}
+              icon={
+                <div className="text-2xl">
+                  <FcGoogle />
+                </div>
+              }
               size="large"
               className="w-full border rounded-md py-3 text-base font-semibold text-[#344054] flex items-center justify-center"
             >
@@ -80,7 +88,11 @@ const SignUp = () => {
             </Button>
 
             <Button
-              icon={<div className="text-2xl text-black"><BsApple /></div>}
+              icon={
+                <div className="text-2xl text-black">
+                  <BsApple />
+                </div>
+              }
               size="large"
               className="w-full border rounded-md text-base font-semibold text-[#344054] flex items-center justify-center"
             >

@@ -8,8 +8,19 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
 import ErrorPage from "../components/ErrorPage";
 import Chatpage from "../pages/chatpage/Chatpage";
+import ComingSoon from "../pages/ComingSoon";
+import Help from "../pages/Help";
+import Setting from "../pages/Setting";
 
 const routes = createBrowserRouter([
+    {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
   {
     path: "/",
     element: <Main />,
@@ -28,14 +39,32 @@ const routes = createBrowserRouter([
       }
     ],
   },
-  {
-    path: "/signup",
-    element: <SignUp />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardLayout />,
-  },
+{
+  path: "/dashboard",
+  element: <DashboardLayout />,
+  children: [
+    {
+      path: "", // এটি /dashboard
+      element: <Dashboard />,
+    },
+    {
+      path: "files", // এটি /dashboard/files
+      element: <ComingSoon />
+    },
+    {
+      path: "help",
+      element: <Help />
+    },
+    {
+      path: "settings",
+      element: <Setting />
+    },
+    {
+      path: "*",
+      element: <ErrorPage />
+    }
+  ],
+},
   {
     path: "/chat",
     element: <Chatpage />,

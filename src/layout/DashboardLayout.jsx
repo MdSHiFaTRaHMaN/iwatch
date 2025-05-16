@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import Sidebar from "../pages/dashboard/Sidebar";
 import Header from "../pages/dashboard/Header";
 import Dashboard from "../pages/dashboard/Dashboard";
+import { Outlet } from "react-router-dom";
 
 const { Content } = Layout;
 
@@ -22,7 +23,8 @@ const DashboardLayout = () => {
           </div>
           <Content className="bg-white p-4">
             <div className="bg-white rounded-xl shadow-sm p-4">
-              <Dashboard />
+              {/* <Dashboard /> */}
+              <Outlet></Outlet>
             </div>
           </Content>
         </Layout>
