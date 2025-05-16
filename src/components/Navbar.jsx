@@ -121,7 +121,7 @@ const Navbar = () => {
           <Button
             type="primary"
             shape="round"
-            className="bg-teal-700 w-full"
+            className="bg-teal-700 !text-white w-full"
           >
             Login
           </Button>

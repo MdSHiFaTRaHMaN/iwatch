@@ -5,7 +5,6 @@ import {
   MessageOutlined,
   QuestionCircleOutlined,
   SettingOutlined,
-  MenuOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Drawer, Button } from "antd";
@@ -66,9 +65,11 @@ const Sidebar = ({ setIsDrawerVisible, isDrawerVisible }) => {
 
   const SidebarContent = () => (
     <div className="px-4 space-y-6">
-      <div className="text-[#00878C] text-3xl font-bold text-center py-6">
-        Reddy App
-      </div>
+      <Link to="/">
+        <div className="text-[#00878C] text-3xl font-bold text-center py-6">
+          Reddy App
+        </div>
+      </Link>
       {menuGroups.map((group) => (
         <div key={group.label}>
           <div className="text-xs font-medium text-[#8B8B8B] mb-2 ml-4">
@@ -77,22 +78,22 @@ const Sidebar = ({ setIsDrawerVisible, isDrawerVisible }) => {
           <div className="flex flex-col space-y-1">
             {group.items.map((item) => (
               <Link to={item.link} key={item.key} className="w-full">
-                  <button
-                    key={item.key}
-                    onClick={() => {
-                      setActiveKey(item.key);
-                      if (isMobile) setIsDrawerVisible(false);
-                    }}
-                    className={`flex w-full items-center gap-3 px-4 py-2 text-sm font-medium rounded-lg transition-all
+                <button
+                  key={item.key}
+                  onClick={() => {
+                    setActiveKey(item.key);
+                    if (isMobile) setIsDrawerVisible(false);
+                  }}
+                  className={`flex w-full items-center gap-3 px-4 py-2 text-sm font-medium rounded-lg transition-all
                   ${
                     activeKey === item.key
                       ? "bg-[#E5F5F4] text-[#00878C]"
                       : "text-[#797979] hover:bg-gray-200"
                   }`}
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </button>
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </button>
               </Link>
             ))}
           </div>
