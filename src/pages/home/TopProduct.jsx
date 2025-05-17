@@ -58,7 +58,7 @@ const TopProduct = () => {
       image: Mobile,
     },
     {
-      title: "WaMusic",
+      title: "ClickUp",
       description:
         "WaMusic is your all-in-one app to manage music and videos offline on Apple Watch.",
       bgColor: "bg-blue-600",
