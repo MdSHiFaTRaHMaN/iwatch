@@ -14,7 +14,7 @@ const NewsletterSubscription = () => {
           Newsletter.
         </p>
 
-        <div className="w-[340px] lg:max-w-sm mx-auto mt-6 bg-transparent border rounded-full bg-white focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 focus-within:ring-opacity-40">
+        <div className="w-[300px] lg:w-[500px] mx-auto mt-6 bg-transparent border rounded-full bg-white focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 focus-within:ring-opacity-40">
           <form className="flex bg-white rounded-full">
             <input
               type="email"

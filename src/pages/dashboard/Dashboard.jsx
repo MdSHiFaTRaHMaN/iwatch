@@ -98,7 +98,7 @@ const Dashboard = () => {
           <h3 className="text-xl text-[#000000] font-semibold mb-4">
             My Storage
           </h3>
-          <div className="flex items-center justify-center mb-4 rotate-[70deg] w-[368px]">
+          <div className="flex items-center justify-center mb-4 -ml-[27px] lg:-ml-0 rotate-[70deg] w-[368px]">
             <Progress
               type="circle"
               percent={85}

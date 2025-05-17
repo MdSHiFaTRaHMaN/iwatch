@@ -25,7 +25,7 @@ const SignUp = () => {
           <h2 className="text-3xl font-semibold mb-2 leading-tight">Sign Up</h2>
           <p className="text-gray-500 mb-8">Start your 30-day free trial.</p>
 
-          <div className="space-y-4 w-[425px]">
+          <div className="space-y-4 w-full lg:w-[425px]">
             <div>
               <label className="text-sm font-medium text-[#344054]">Name</label>
               <Input

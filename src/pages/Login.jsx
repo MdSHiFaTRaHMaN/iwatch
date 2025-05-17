@@ -23,7 +23,7 @@ const Login = () => {
             Welcome back! Please login to your account.
           </p>
 
-          <div className="space-y-4 w-[425px]">
+          <div className="space-y-4 w-full lg:w-[425px]">
             <div>
               <label className="text-sm text-[#344054] font-medium">
                 Email
